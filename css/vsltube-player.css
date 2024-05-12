@@ -1,0 +1,480 @@
+/* temporárias */
+/* 
+.vvcenter{text-align:center; padding-top:20px}
+.logo-temp{ width: 120px; max-width:10vw; margin:10px auto; display:block}
+.video-vsl{  max-width:1000px !important;}
+.btn-test{ width: 140px; background: #0a6; display:inline-block; line-height:2em; color:#fff; border-radius:5px; cursor:pointer; }
+.btn-test:hover{box-shadow:inset 0 0 0 200px rgba(0, 0, 0, .5)} */
+/* fim temporárias */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap');
+
+
+
+.name-vsltube{  z-index:110; position:absolute; background: rgba(0,0,0, .6); color:#fff !important; border-radius:5px; padding:5px 10px; font-size:13px; transform: translate(-50%, -150%); opacity:.8}
+
+.alert{ width: 100%; background: #111; vertical-align:middle; color:#fff !important; font-size:13px; text-align:center; position:relative; max-width:800px; margin:0 auto; box-shadow:inset 0 0 0 2px rgba(255, 255,255, .3)}
+.alert >*{position:absolute; top: 50%; left: 0; right: 0; width: 80%; display:block;transform:translateY(-50%); margin:0 auto}
+.alert:after {content: "";display:inline-block; padding-bottom: 55%; }
+
+
+
+.video-vsl{box-sizing: border-box; max-width:100%; margin:0 auto; position:relative; background: #000; text-align:center; padding:0; font-size:10px; text-align:center; overflow:hidden;
+  background-size:cover;
+  
+    font-family: 'Open Sans', sans-serif;
+
+  
+}
+.video-vsl:after {content: "";display:inline-block; padding-bottom: 55%;}
+.video-vsl *{font-size:inherit; line-height: inherit;  color: inherit; font-weight:inherit; }
+
+
+
+.vlst-bg{ width: 101%;   position:absolute; top: -.5%; left: -.5%; right: -.5%; bottom: -.5%; z-index:1;  margin:auto; background: none; }
+.vplay .vlst-bg{display:none !important}
+.vlst-bg.force-hidden{display:none !important}
+
+
+/* muda a opacity para .5  assim o player vai ficar sempre um pouco visivel */
+.video-vsl  #player{position:absolute; top: -3000px;bottom: -3000px; left: 0px;right: 0px;   z-index:99; transform: scale(1);
+ width:100%; height:calc(100% + 6000px);margin:auto;
+  opacity:.001;
+ /* transition: .5s; */
+}
+
+
+.video-vsl.vload #player{height:calc(100% + 6000px); transform: scale(1);}
+.video-vsl.vplay #player{opacity:1; background: transparent;  height:calc(100% + 6000px); 
+  transform: scale(1);}
+.video-vsl.vplay.vfim #player{opacity:.001; background: transparent; }
+
+
+
+
+
+
+.box-inner-center{  position:absolute; top: 50%; left: 0;right: 0; margin:0 auto; display:inline-block; transform: translateY(-50%)}
+.video-vsl .box-inner-icon{  width: 20vw; max-width:160px;  display:block; margin:0 auto ; 
+fill:#fff;   }
+
+
+
+
+/* ===============================================================
+controles
+=============================================================== */
+
+.vcontrol-group{position:absolute; bottom: 0px; width: 100%; z-index:9999;  }
+
+#controlgroup { display:none; }
+.vplay #controlgroup { display:block; }
+
+.vcontrol-group-inner{overflow:hidden; padding:5px 10px;  background: linear-gradient(transparent , rgba(0, 0, 0, .3)); transform: translateY(200%); transition: .5s ease-in-out; opacity:.001;
+  box-shadow: 0 10px 10px  rgba(0, 0, 0, .3)}
+
+
+.video-vsl:hover .vcontrol-group-inner{transform: translateY(0) !important; opacity:1 !important;}
+
+
+
+
+.vslt-control-icon{width: 2.4em; min-width:14px; max-width:160px; z-index:9999; cursor:pointer;    display: inline-block; }
+
+.vvsl-timer{  font-size:1.5em; line-height:1.6em;  color:#fff; text-shadow: 0 0 3px rgba(0, 0, 0, .5);display: inline-block;  }
+
+
+
+#fullbtn{ float:right }
+#mutebtn{float:left}
+
+
+.vmute  #vvslmute1, #vvslmute2{display:none}
+.vmute  #vvslmute2 {display:block}
+
+.vvsl-fullscreen-act #vvslfullscreen1, #vvslfullscreen2{display:none}
+.vvsl-fullscreen-act #vvslfullscreen2{display:block}
+
+
+.video-vsl-live #durationtime{display:none !important ; }
+
+
+
+
+.vintro .vcontrol-group-inner{display:none; transform: translateY(200%);}
+.vcookie .vcontrol-group{display:none !important}
+.vload:not(.vplayStart) .vcontrol-group{display:none !important}
+
+/* videobar ---------------------------------------------------- */
+.vslt-range{ width: 100%; font-size:1em; height: 1em; background: rgba(0, 0, 0, 0); position:relative; overflow:hidden}
+.vslt-range-barra{ height: 100%; width: 0; display:block; background: rgba(0, 0, 0, .2); text-align:right;  }
+.vplay .vslt-range-barra{ width: 100%; }
+
+.vslt-range-barra:after{content:'';display:inline-block; width: .001em; height: 100%; background: inherit; transition:.2s linear;  box-shadow:inset 0 0 0 50px rgba(0, 0, 0, .4); border-radius:50%; }
+input[type="range"]:hover + .vslt-range-barra:after{width:1em;margin-right:-.5em ;}
+.vslt-range input[type="range"]{ position:absolute; top: 0; left: 0;  width: 100%;
+  height: 100%; opacity:.0001; cursor:pointer; }
+
+.vcookie .vslt-range, .vfim .vslt-range{display:none}
+
+.vplay .vslt-range, .fake-bar.vslt-range{background: rgba(0, 0, 0, .2) ;}
+
+
+
+ .vintro #progbar input[type="range"]{z-index:-10}
+
+
+.vslt-range .vslt-range-barra{transition:0s linear; }
+.vplay .vslt-range .vslt-range-barra{transition:1s linear; }
+.vslt-range input[type="range"]:hover +  .vslt-range-barra{transition:none !important; }
+.control-bar-off input[type="range"], .fake-bar input[type="range"]{z-index:-10; transform:translateY(200px) }
+
+
+
+.fake-bar .vslt-range-barra{
+  width: 100%;
+  animation: ani-bar 5s linear ;
+ 
+}
+.vpause  .fake-bar  .vslt-range-barra::before ,.vpause .fake-bar .vslt-range-barra{ animation-play-state: paused;}
+
+
+@keyframes ani-bar {
+   0% { width: 0;}
+ 100% { width: 100%;}
+}
+
+.fake-bar  .vslt-range-barra::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+bottom: 0;
+  width: inherit;
+    background-image: linear-gradient(-45deg, transparent 25%, rgba(0, 0, 0, .1) 25%, rgba(0, 0, 0, .1) 50%, transparent 50%, transparent 75%, rgba(0, 0, 0, .1) 75%);
+    background-color: transparent;
+    background-size: 50px 50px;
+ 
+    animation: move-fake 2s linear infinite;
+}
+
+@keyframes move-fake {
+    0%   { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+}
+
+/* ===============================================================
+vblack
+=============================================================== */
+
+.box-black{ background: rgba(0, 0, 0, .8);position:absolute;top: 0;left: 0;right: 0;bottom: 0; z-index:9998; display:none}
+.vblack .box-black{display:block}
+
+/* ===============================================================
+load
+=============================================================== */
+
+.video-vsl .box-load{ background: rgba(0, 0, 0, .01);position:absolute;top: 0;left: 0;right: 0;bottom: 0;margin:auto; z-index:90;  cursor:pointer;  background-size:cover;  display:none}
+.box-load:after{content:''; width: 20vw; max-width:140px; height: 20vw; max-height: 140px;  display:block; border:solid 1vw ; border-color:#fff #fff #fff transparent; border-radius:50%; position:absolute; left: 0;right: 0;top: 0;bottom: 0; margin:auto; animation: ani-load 1.5s linear infinite; }
+
+@keyframes ani-load {
+ 100% {transform: rotate(360deg)}
+}
+
+
+
+.video-vsl.vload .box-load{display:block}
+/* .video-vsl.vplay .box-load{display:none} */
+
+
+/* ===============================================================
+cookie
+=============================================================== */
+.video-vsl .box-cookie{height: 100%; width: 50%; background:transparent; position:absolute; display:none; color:#fff; font-size:2.2em; line-height:1em; cursor:pointer }
+
+.video-vsl.vcookie  .box-cookie{display:block;  }
+
+
+.box-cookie.box-cookie-t{left:0; right:0; top: 0; width: 100%;  background: red;z-index:90;  background:#f57f17; font-size:2.2em;font-weight:600} 
+ .box-cookie.box-cookie-l{ right:0; z-index:110}
+ .box-cookie.box-cookie-r{ left:0; z-index:91;  }
+
+
+.box-cookie.box-cookie-t span{position:absolute; display:inline-block; top: 16%;  left: 0;right: 0; }
+
+
+
+/* ===============================================================
+fim
+=============================================================== */
+.video-vsl .box-fim{ background: #222;position:absolute;top: 0;left: 0;right: 0;bottom: 0;margin:auto;   cursor:pointer;  background-size:cover; color:#fff;  font-size:1.6em; line-height:1em; display:none; z-index:111; background-image: ; background-size:100% 100%; }
+
+.video-vsl.vfim .box-fim{display:block !important}
+
+.video-vsl.vplay.vfim.video-vsl-live  .box-vplay-mask, .video-vsl.vfim.video-vsl-live  .box-vplay-mask{ cursor: default;  }
+
+.video-vsl .box-fim{display:block; z-index:-100; opacity:.0001}
+.video-vsl.vplay .box-fim{display:none; z-index:111; opacity:1}
+
+.video-vsl.video-vsl-live.vplay.vmute .box-mute{display:block !important}
+
+/*live*/
+
+.video-vsl-live .tela-fim-padrao{display:none}
+
+/* ===============================================================
+pause
+=============================================================== */
+
+.video-vsl .box-pause{ background:rgba(0, 0, 0, .01);position:absolute;top: 0;left: 0;right: 0;bottom: 0;margin:auto; cursor:pointer; background-image: ; background-size:100% 100%; display:none; z-index:110; }
+
+
+.video-vsl .box-pause{display:block; z-index:-100; opacity:.0001}
+.video-vsl.vplay .box-pause{ display:none; z-index:110; opacity:1}
+
+
+.video-vsl.vpause   .box-pause{display:block !important}
+
+.video-vsl-live.vpause   .box-pause{display:none !important}
+
+
+.box-pause svg{animation: ani-play-btn-pulse 1s linear infinite;}
+
+@keyframes ani-play-btn-pulse {
+  50% {transform: scale(1.1)}
+  
+ 100% {transform: scale(1)}
+}
+
+
+
+/* ===============================================================
+box-mask
+=============================================================== */
+
+.video-vsl.vplay .box-vplay-mask{ background: rgba(0, 0, 0, .01);position:absolute;top: 0;left: 0;right: 0;bottom: 0;margin:auto; z-index:9990; opacity:.0005; cursor:pointer; background-image: ; background-size:100% 100%}
+
+
+.video-vsl.vpay .box-vplay-mask{
+  
+  opacity:.15;
+
+
+background-color: #000000;
+background: radial-gradient(circle, transparent 20%, #000000 20%, #000000 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #000000 20%, #000000 80%, transparent 80%, transparent) 15px 15px, linear-gradient(#ffffff 1.2000000000000002px, transparent 1.2000000000000002px) 0 -0.6000000000000001px, linear-gradient(90deg, #ffffff 1.2000000000000002px, #000000 1.2000000000000002px) -0.6000000000000001px 0;
+background-size: 30px 30px, 30px 30px, 15px 15px, 15px 15px;
+}
+
+
+
+/* ===============================================================
+box-mute
+=============================================================== */
+
+.video-vsl .box-mute{ background: rgba(0, 0, 0, .2);position:absolute;top: 0;left: 0;right: 0;bottom: 0;margin:auto; z-index:110;  cursor:pointer;  background-size:cover; display:none;  color:#fff; font-size:1.6em; line-height:1em}
+
+.video-vsl.video-vsl-live.vmute .box-mute{display:block !important}
+
+
+
+
+.video-vsl.video-vsl-live:before{content:'AO VIVO'; position:absolute; top: 6%; right: 4%; color:#fff; z-index:9999;  animation: livetop 1s linear  infinite alternate; opacity:.8; background: #c33; padding: 5px; border-radius:4px; font-size:1.3em}
+
+.video-vsl.vplay.vfim.video-vsl-live:before, .video-vsl.vfim.video-vsl-live:before {display:none !important}
+
+.video-vsl.vplay.video-vsl-live:before{}
+@keyframes livetop{
+  100%{opacity:.5;}
+}
+.video-vsl.video-vsl-live.vfim:before{display:none !important}
+
+
+/* ===============================================================
+intro
+=============================================================== */
+.video-vsl .box-intro{ position:absolute;top: 0;left: 0;right: 0;bottom: 0;margin:auto; z-index:98; overflow:hidden;color:#fff; display:none;font-size:1.6em }
+
+.vintro .box-intro{display:flex}
+.vintro.vcookie .box-intro{display:none !important}
+
+
+
+.box-intro-center{ background: #FFA833;  width:40% ; max-width: 300px;margin:auto;  border-radius:10px; box-shadow:inset 0 0 0 .3em  rgba(255, 255, 255, .5); padding:10px; animation: ani-intro-center 1s linear infinite;}
+
+
+.box-intro-center p{ display: block; margin:.4em; padding:0; font-weight:bolder }
+.box-intro-center .imgaudio{margin:1em auto; width:30%;}
+
+
+@keyframes ani-intro-center {
+  50% {transform: scale(.9) }
+ 100% {transform: scale(1)}
+}
+
+#introplay svg{animation: ani-play-btn-pulse 1s linear infinite;}
+#introplay + #intromute{display:none }
+#introplay.force-hidden + #intromute{display:block !important}
+
+/* ===============================================================
+vprebuffer
+=============================================================== */
+.vprebuffer .box-pause, .vprebuffer .box-fim{display:block !important; height: 1px !important;z-index:-200 !important}
+
+
+
+
+/* ===============================================================
+animacao intro
+=============================================================== */
+
+@-webkit-keyframes BLINK {0% { opacity: 0; }33% { opacity: 1; }66% { opacity: 1; }100% { opacity: 0; }}@keyframes BLINK {0% { opacity: 0; }33% { opacity: 1; }66% { opacity: 1; }100% { opacity: 0; }}
+
+.blink_1 {-webkit-animation: BLINK 2s infinite;animation: BLINK 2s infinite;opacity: 0;}
+.blink_2 {-webkit-animation: BLINK 2s infinite .3s;animation: BLINK 2s infinite .3s;opacity: 0;}
+.blink_3 {-webkit-animation: BLINK 2s infinite .6s;animation: BLINK 2s infinite .6s;opacity: 0;}
+.smartplay-svg-color {fill: #FFFFFF !important;}
+.adjustable {border: 4px solid red;}
+
+
+
+
+/* ===============================================================
+fullscreen
+=============================================================== */
+
+#video-vsl:-webkit-full-screen	{ width: 100% }
+#video-vsl:-moz-full-screen		{ width: 100% }
+#video-vsl:-ms-full-screen		{ width: 100% }
+#video-vsl:-o-full-screen		{ width: 100% }
+#video-vsl:full-screen			{ width: 100% }
+
+#video-vsl:full-screen
+{
+	width: 100%;
+}
+
+#video-vsl:full-screen img
+{
+	width: 100%;
+}
+
+
+
+
+
+
+ /* ===============================================================
+fullscreen correcao Iphone
+=============================================================== */
+ .video-vsl.vvsl-fullscreen-act { max-width: 180vh !important;  z-index:9999; position:fixed; top: 50%; left: 0;right: 0; transform: translateY(-50%); margin:auto; border:0 !important}
+ .video-vsl.vvsl-fullscreen-act + .vvsl-fullscreen{ background: #000; height: 100vh; position:fixed; top: 0; left: 0;right: 0; z-index:9998; display:block} 
+
+
+
+/* ===============================================================
+mobile
+=============================================================== */
+
+@media (max-width: 1100px){ #vsltube:not(.framemode) .vcontrol-group-inner{transform: translateY(0) !important; opacity:1; !important}}
+
+@media (max-width: 600px)
+{#vsltube:not(.framemode) .video-vsl{font-size:1.6vw !important}
+ #vsltube:not(.framemode) .box-intro-center{ opacity:.9; width: 60%;} 
+}
+
+.frametablet .video-vsl  .vcontrol-group-inner{transform: translateY(0) !important; opacity:1 !important; }
+
+#vsltube.framemobile   .video-vsl{font-size:2vw !important}
+#vsltube.framemobile  .box-intro-center{ opacity:.9; width: 60%;} 
+/*@media (max-width: 600px)
+{.video-vsl{font-size:8px !important}
+}
+
+@media (max-width: 400px)
+{ .video-vsl{font-size:6px !important}
+}
+
+@media (max-width: 280px)
+{.video-vsl{font-size:4px !important}
+}*/
+
+/* ===============================================================
+force hidden
+=============================================================== */
+
+.ocultar-elemento, .force-hidden{display:none !important; }
+
+
+/* CSS DO PLAYER */
+
+
+
+.vsltube-cta{padding:20px 10px !important; font-size:10px !important;  text-align:center !important}
+.vsltube-cta-title{font-size:2.2em !important; margin-bottom:1em !important; font-weight:500 !important; font-family: roboto !important;}
+.vsltube-cta-btn{ width: 400px !important; max-width:95% !important; font-size:1.6em !important; line-height:3em !important; min-height:3em !important; background: #23be75 !important; color:#fff  !important; display:block !important;margin:0 auto !important;cursor:pointer !important; border-radius:10px !important; box-shadow:inset 0 0 0 1px rgba(0, 0, 0, .2) !important; font-family: roboto !important; text-decoration: none !important}
+.vsltube-cta-btn:hover{box-shadow:inset 0 0 0 1000px rgba(0, 0, 0, .2) !important}
+
+.vsltube-cta .payment{ width: 15% !important; max-width:66px !important; margin: 10px 0 0 0px !important}
+.vsltube-cta #cta-card{ width: 60% !important; max-width:264px !important}
+
+
+.mobile-mode .vsltube-cta .vsltube-cta-title{font-size:1.6em !important}
+.mobile-mode .vsltube-cta .vsltube-cta-btn{font-size:1.3em !important}
+@media (max-width:720px) , (max-height: 600px){
+.mobile-mode .vsltube-cta .vsltube-cta-title{font-size:1.6em !important}
+.mobile-mode .vsltube-cta .vsltube-cta-btn{font-size:1.3em !important}
+}
+
+
+
+
+
+
+
+ .squaremode .vlst-bg,  .verticalmode .vlst-bg{ height: 101%; width:auto;   position:absolute; top: -.5%; left: -1000%; right: -1000%; bottom: -.5%; z-index:1;}
+
+.squaremode.video-vsl:after {content: "";display:inline-block; padding-bottom: 100%;}
+.verticalmode.video-vsl:after {content: "";display:inline-block; padding-bottom: 177%;}
+.video-vsl.verticalmode .box-intro-center{  width:70% ;}
+
+.video-vsl.vplay.squaremode #player, .video-vsl.vplay.verticalmode #player{opacity:1; background: transparent;width:1000%; height:104% !important; left: -1000%; right: -1000%;  min-height:1px; transform: scale(1);}
+
+
+.video-vsl.vpause.squaremode #player, .video-vsl.vpause.verticalmode #player{ height: 200% !important; filter:blur(15px)}
+
+.verticalmode .box-cookie, .squaremode .box-cookie{font-size:1.8em;}   
+
+
+
+.verticalmode .box-cookie.box-cookie-t{ top: 0; font-size:1.6em;} 
+.verticalmode .box-cookie.box-cookie-t span{position:absolute; display:inline-block; top: 10%;  left: 0;right: 0; padding:0 20px }
+.verticalmode  .box-cookie.box-cookie-l{ right:0; left:0;  width: 80%; max-width:200px !important; top: 20%; height: 30%; margin:auto}
+.verticalmode .box-cookie.box-cookie-r{ right:0; left:0;  width: 80%; top: 60%; height: 30%; margin:auto }
+.video-vsl.verticalmode  .box-inner-icon{  width: 40vw; max-width:100px !important;} 
+
+
+.video-vsl.youtubemode #player{width:1000%; height:104% !important; transform:scale(1)} 
+
+
+.video-vsl.squaremode  .box-inner-icon{  width: 25vw; max-width:100px !important;} 
+.squaremode .box-cookie.box-cookie-t{ top: 0; font-size:1.8em;} 
+
+
+
+.framemode .video-vsl.squaremode #progbar{ font-size: 2em !important;}
+.framemode .video-vsl.verticalmode #progbar{ font-size: 3em !important;}
+
+ @media (max-width: 600px)
+{
+   .video-vsl.verticalmode{font-size:8px!important}
+ .framemode .video-vsl.squaremode #progbar{ font-size: 3em !important;
+ 
+}
+
+
+ @media (max-width: 340px)
+{}
+  .framemode .video-vsl.verticalmode #progbar{ font-size: 5em !important;}}
+
+
+
